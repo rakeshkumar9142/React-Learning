@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import OpenStartLogo from '../../assets/OpenStartLogo.jpg';
 
 export default function Footer() {
     return (
@@ -9,8 +10,8 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                                className="mr-3 h-16"
+                                src={OpenStartLogo}
+                                className="h-20 w-20 rounded-full object-cover p-0.01 bg-white shadow-xl"
                                 alt="Logo"
                             />
                         </Link>

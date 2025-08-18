@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
+import OpenStartLogo from '../../assets/OpenStartLogo.jpg';
 
 export default function Header() {
     return (
@@ -8,8 +9,8 @@ export default function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                            className="mr-3 h-12"
+                            src={OpenStartLogo} 
+                            className="h-20 w-20 rounded-full object-cover p-0.01 bg-white shadow-xl"
                             alt="Logo"
                         />
                     </Link>
