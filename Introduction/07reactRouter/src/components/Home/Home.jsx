@@ -2,6 +2,8 @@ import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import Rakesh_P from "../../assets/Rakesh_P.jpg"
+
 
 // Helper components for icons
 const GlobeIcon = () => (
@@ -44,7 +46,7 @@ function Globe() {
   // Use useFrame for continuous rotation
   useFrame(() => {
     if (globeRef.current) {
-      globeRef.current.rotation.y += 0.002;
+      globeRef.current.rotation.y += 0.01;
     }
   });
 
@@ -99,7 +101,7 @@ export default function OpenStartPage() {
             name: "Rakesh Kumar",
             country: "India",
             bio: "Student entrepreneur building XfBeeN to reduce food wastage using computer vision.",
-            img: "https://placehold.co/400x400/db2777/ffffff?text=R",
+            img: {Rakesh_P},
         },
         {
             name: "Cheedhe",

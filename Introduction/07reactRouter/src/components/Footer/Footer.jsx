@@ -109,7 +109,7 @@ export default function Footer() {
                             <GithubIcon />
                             <span>GitHub</span>
                         </SocialIcon>
-                        <SocialIcon href="#">
+                        <SocialIcon href="https://www.linkedin.com/in/rakesh-kumar-ba423826b/">
                             <LinkedinIcon />
                             <span>LinkedIn</span>
                         </SocialIcon>

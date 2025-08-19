@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-// It's better to manage the logo path. If you move this component, the path might break.
-// A common practice is to place assets in a public folder or manage paths with a config.
-// For this example, we'll assume the path is correct relative to this file's location.
-// import OpenStartLogo from '../../assets/OpenStartLogo.jpg'; 
-
 // Using a placeholder for the logo so the component is self-contained and runnable.
 const OpenStartLogo = 'https://placehold.co/100x100/1e1b4b/ffffff?text=OS&font=inter';
 
@@ -22,6 +17,30 @@ const CloseIcon = () => (
     </svg>
 );
 
+// Inlined WhatsApp SVG Icon
+const WhatsAppIcon = ({ className }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+    >
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.398 1.919 6.166l-.362 1.254 1.27 1.241z" />
+    </svg>
+);
+
+// --- ADDED: Inlined Telegram SVG Icon ---
+const TelegramIcon = ({ className }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+    >
+        <path d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.435-1.429l3.541 1.348 4.09 3.868-4.635 4.331c-.38-.21-.733-.463-1.056-.759l-1.94-8.788zm15.435-2.571l-12.053 4.852 10.941 10.179c.923-.463 1.748-1.13 2.435-1.948l-1.323-13.083zm-3.48 2.029l-4.52 4.234-3.541-1.347 8.061-5.621z"/>
+    </svg>
+);
+
 
 export default function Header() {
     // State to manage the visibility of the mobile menu
@@ -33,6 +52,7 @@ export default function Header() {
         { to: "/about", text: "About" },
         { to: "/contact", text: "Contact" },
         { to: "/github", text: "Github" },
+        { to: "/rakesh", text: "rakesh" },
     ];
 
     // Style for NavLink, making it reusable
@@ -43,7 +63,6 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
-            {/* The 'container' and 'mx-auto' classes have been removed for a true full-width design */}
             <nav className="w-full px-4 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between">
                     {/* Logo */}
@@ -72,11 +91,24 @@ export default function Header() {
                         >
                             Log in
                         </Link>
+                        {/* --- ADDED TELEGRAM BUTTON --- */}
                         <Link
-                            to="#"
-                            className="rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105"
+                            to="https://t.me/@RakeshKumar9905" // Replace with your Telegram link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center rounded-md bg-gradient-to-r from-sky-500 to-blue-600 px-4 py-2 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105"
                         >
-                            Get started
+                            <TelegramIcon className="h-5 w-5 mr-2" />
+                            Join Us
+                        </Link>
+                        <Link
+                            to="https://wa.me/919905307658"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center rounded-md bg-gradient-to-r from-green-500 to-teal-500 px-4 py-2 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105"
+                        >
+                            <WhatsAppIcon className="h-5 w-5 mr-2" />
+                            Chat Now
                         </Link>
                     </div>
 
@@ -115,11 +147,24 @@ export default function Header() {
                             >
                                 Log in
                             </Link>
+                             {/* --- ADDED TELEGRAM BUTTON TO MOBILE MENU --- */}
                             <Link
-                                to="#"
-                                className="w-full text-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-2 text-base font-medium text-white shadow-lg"
+                                to="https://t.me/@RakeshKumar9905" // Replace with your Telegram link
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-2 text-base font-medium text-white shadow-lg"
                             >
-                                Get started
+                                 <TelegramIcon className="h-5 w-5 mr-2" />
+                                Join on Telegram
+                            </Link>
+                            <Link
+                                to="https://wa.me/919905307658"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-green-500 to-teal-500 px-3 py-2 text-base font-medium text-white shadow-lg"
+                            >
+                                 <WhatsAppIcon className="h-5 w-5 mr-2" />
+                                Chat on WhatsApp
                             </Link>
                         </div>
                     </div>
