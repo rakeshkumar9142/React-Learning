@@ -10,6 +10,8 @@ import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
 import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 import Rakesh from "./components/rakesh/rakesh.jsx"
+import News from "./components/News/News.jsx";
+
 // const router = createBrowserRouter([
 //   {
 //     path: '/',
@@ -44,6 +46,7 @@ const router = createBrowserRouter(
       element={<Github />}
        />
         <Route path='rakesh' element={<Rakesh />} />
+        <Route path='news' element={<News />} />
     </Route>
   )
 )

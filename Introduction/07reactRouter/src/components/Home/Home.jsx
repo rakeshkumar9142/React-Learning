@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
@@ -101,7 +101,7 @@ export default function OpenStartPage() {
             name: "Rakesh Kumar",
             country: "India",
             bio: "Student entrepreneur building XfBeeN to reduce food wastage using computer vision.",
-            img: {Rakesh_P},
+            img: Rakesh_P,
         },
         {
             name: "Cheedhe",
@@ -148,7 +148,7 @@ export default function OpenStartPage() {
                     </Canvas>
                 </div>
                 <div className="relative z-10 text-center p-4">
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-500">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-500 ">
                         OpenStart
                     </h1>
                     <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
@@ -186,7 +186,7 @@ export default function OpenStartPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {teamMembers.map((member, index) => (
                             <div key={index} className="bg-gray-800 rounded-xl p-6 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-                                <img src={member.img} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500" />
+                                <img src={member.img} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-3 border-indigo-500" />
                                 <h3 className="text-xl font-semibold">{member.name}</h3>
                                 <p className="text-indigo-400 mb-2">{member.country}</p>
                                 <p className="text-gray-400 text-sm">{member.bio}</p>
